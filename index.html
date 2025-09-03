@@ -1,0 +1,222 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <title>Soumya Gopalapuram | Portfolio</title>
+  <meta name="description" content="Data Analyst | Machine Learning | Backend Developer" />
+
+  <meta property="og:title" content="Soumya Gopalapuram | Portfolio" />
+  <meta property="og:description" content="Data Analyst | Machine Learning | Backend Developer" />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="assets/preview.png" />
+  <meta property="og:url" content="https://your-domain.com" />
+
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🗂️</text></svg>">
+
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <!-- Header -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="#home">Soumya</a>
+
+      <nav id="nav" class="nav">
+        <a href="#about">About</a>
+        <a href="#skills">Skills</a>
+        <a href="#projects">Projects</a>
+        <a href="#contact">Contact</a>
+      </nav>
+
+      <button id="menuBtn" class="menu-btn" aria-label="Toggle menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <main id="home" class="hero">
+    <div class="container hero-inner">
+      <div class="hero-text">
+        <p class="eyebrow">Hi, I’m</p>
+        <h1>Soumya Gopalapuram</h1>
+        <p class="subtitle">Data Analyst | Machine Learning | Backend Developer</p>
+
+        <div class="cta-row">
+          <a class="btn primary" href="https://github.com/SoumyaGopalapuram" target="_blank" rel="noopener">GitHub</a>
+          <a class="btn outline" href="https://www.linkedin.com/in/soumya-gopalapuram" target="_blank" rel="noopener">LinkedIn</a>
+          <a class="btn ghost" href="mailto:soumyagopalapuram11@gmail.com">Email me</a>
+        </div>
+      </div>
+      <div class="hero-card">
+        <p class="hero-card-title">Open to roles in Data, ML, and Backend</p>
+        <ul>
+          <li>3+ years across data analysis and backend services</li>
+          <li>Python, SQL, Java, REST APIs</li>
+          <li>Power BI, Tableau, Spark, Databricks</li>
+        </ul>
+      </div>
+    </div>
+  </main>
+
+  <!-- About -->
+  <section id="about" class="section">
+    <div class="container">
+      <h2>About</h2>
+      <p>
+        I’m a Data Science graduate who enjoys turning messy data into useful products and insights. 
+        I build clean APIs, design reliable data workflows, and tell clear stories with dashboards. 
+        Recent work includes recommendation systems, churn modeling, and automation for hiring workflows.
+      </p>
+      <p class="note">
+        This site reflects details from my resume like tools, projects, and outcomes to keep things consistent.
+      </p>
+    </div>
+  </section>
+
+  <!-- Skills -->
+  <section id="skills" class="section alt">
+    <div class="container">
+      <h2>Skills</h2>
+
+      <div class="skills-grid">
+        <div class="card">
+          <h3>Languages</h3>
+          <p>Python, Java, SQL</p>
+        </div>
+        <div class="card">
+          <h3>Data & ML</h3>
+          <p>Pandas, NumPy, scikit-learn, XGBoost, SHAP, Spark, Databricks</p>
+        </div>
+        <div class="card">
+          <h3>Visualization</h3>
+          <p>Power BI, Tableau, Matplotlib</p>
+        </div>
+        <div class="card">
+          <h3>Databases</h3>
+          <p>PostgreSQL, MySQL, Oracle, SQL Server</p>
+        </div>
+        <div class="card">
+          <h3>Backend</h3>
+          <p>Spring Boot, REST APIs, Postman, GitHub CI</p>
+        </div>
+        <div class="card">
+          <h3>Other</h3>
+          <p>Excel, Power Query, Power Automate</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Projects -->
+  <section id="projects" class="section">
+    <div class="container">
+      <h2>Projects</h2>
+
+      <!-- PROJECT 1 -->
+      <article class="project">
+        <div class="project-content">
+          <h3>AI-Powered Hiring Automation Platform</h3>
+          <p>
+            Built a functional prototype that reduces manual effort in hiring by using LLMs to read JDs,
+            generate search strategies, screen resumes, and coordinate steps across the funnel.
+          </p>
+          <ul class="tags">
+            <li>Nest.js (TypeScript)</li>
+            <li>OpenAI API</li>
+            <li>Supabase PostgreSQL + pgvector</li>
+            <li>VS Code</li>
+            <li>Git & GitHub</li>
+            <li>Thunder Client</li>
+          </ul>
+          <p class="dim">
+            Outcome: First working core feature shipped as a prototype that proves value.
+          </p>
+
+          <div class="links">
+            <a class="btn small" href="https://github.com/SoumyaGopalapuram/hr-automated-backend" target="_blank" rel="noopener">View code</a>
+          </div>
+        </div>
+      </article>
+
+      <!-- PROJECT 2 -->
+      <article class="project">
+        <div class="project-content">
+          <h3>Customer Churn Analysis and Predictive Modeling</h3>
+          <p>
+            Analyzed drivers of churn and trained several models to flag at-risk customers.
+            Focus on balanced precision and recall, with SHAP to explain model behavior.
+          </p>
+          <ul class="tags">
+            <li>Python</li>
+            <li>pandas</li>
+            <li>scikit-learn</li>
+            <li>XGBoost</li>
+            <li>imbalanced-learn</li>
+            <li>SHAP</li>
+            <li>matplotlib</li>
+          </ul>
+          <p class="dim">
+            Outcome: Tuned XGBoost delivered the best tradeoff within a 5-hour constraint using SHAP for interpretability.
+          </p>
+        </div>
+      </article>
+
+      <!-- PROJECT 3 -->
+      <article class="project">
+        <div class="project-content">
+          <h3>Steam Game Recommendation Engine</h3>
+          <p>
+            Built a scalable recommendation engine to personalize game picks across a large catalog. 
+            Designed ETL in Spark and measured quality with RMSE and Precision@5.
+          </p>
+          <ul class="tags">
+            <li>PySpark</li>
+            <li>Azure Databricks</li>
+            <li>ALS Collaborative Filtering</li>
+            <li>TF-IDF</li>
+          </ul>
+          <p class="dim">
+            Outcome: RMSE 0.85 and Precision@5 72 percent on millions of records.
+          </p>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section id="contact" class="section alt">
+    <div class="container">
+      <h2>Contact</h2>
+
+      <div class="contact-grid">
+        <a class="contact-card" href="mailto:soumyagopalapuram11@gmail.com">
+          <span class="contact-title">Email</span>
+          <span class="contact-value">soumyagopalapuram11@gmail.com</span>
+        </a>
+
+        <a class="contact-card" href="https://github.com/SoumyaGopalapuram" target="_blank" rel="noopener">
+          <span class="contact-title">GitHub</span>
+          <span class="contact-value">SoumyaGopalapuram</span>
+        </a>
+
+        <a class="contact-card" href="https://www.linkedin.com/in/soumya-gopalapuram" target="_blank" rel="noopener">
+          <span class="contact-title">LinkedIn</span>
+          <span class="contact-value">soumya-gopalapuram</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <p>© <span id="year"></span> Soumya Gopalapuram</p>
+      <a href="#home" class="back-to-top">Back to top ↑</a>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
