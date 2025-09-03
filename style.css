@@ -155,3 +155,70 @@ img{max-width:100%;display:block}
     box-shadow:var(--shadow);
   }
 }
+
+/* === Polish pass: spacing, scale, accents, nav highlight === */
+:root{
+  --brand-1:#02e0ff;
+  --brand-2:#0077ff;
+  --radius:16px;
+  --shadow-lg:0 18px 40px rgba(2,6,23,.12);
+}
+
+/* Softer background glow */
+body{
+  background:
+    radial-gradient(900px 600px at 12% -10%, #eaf5ff 0%, transparent 55%) no-repeat,
+    radial-gradient(900px 600px at 120% -20%, #f7f2ff 0%, transparent 55%) no-repeat,
+    var(--bg);
+}
+
+/* Header gets a subtle shadow on scroll */
+.site-header.scrolled{ box-shadow: 0 8px 24px rgba(2,6,23,.06) }
+
+/* Navigation underline + active state */
+.nav a{ position:relative; opacity:.85 }
+.nav a:hover{ opacity:1; background:transparent }
+.nav a::after{
+  content:""; position:absolute; left:10px; right:10px; bottom:6px; height:2px;
+  background:linear-gradient(90deg,var(--brand-1),var(--brand-2));
+  transform:scaleX(0); transform-origin:left; transition:transform .25s ease;
+  border-radius:999px;
+}
+.nav a:hover::after{ transform:scaleX(1) }
+.nav a.active{ opacity:1 }
+.nav a.active::after{ transform:scaleX(1) }
+
+/* Hero: bigger name, tighter spacing */
+.hero{ padding:110px 0 48px }
+.hero h1{ font-size:clamp(38px, 6vw, 56px); letter-spacing:-0.5px; margin-bottom:6px }
+.subtitle{ font-size:18px; color:#334155 }
+
+/* Right card: a bit “floaty” */
+.hero-card{
+  border-radius:18px; border:1px solid #e8edf6; box-shadow:var(--shadow-lg);
+}
+
+/* Sections and readable line length */
+.section{ padding:84px 0 }
+.section h2{ font-size:32px }
+.section p{ max-width:72ch }
+
+/* Alternate section with faint tint */
+.section.alt{
+  background:linear-gradient(180deg, rgba(2,132,199,.04), rgba(2,6,23,0) 40%), #fff;
+}
+
+/* Cards and projects pop slightly more */
+.card, .project, .contact-card{
+  border-radius:18px; border:1px solid #e8edf6; box-shadow:var(--shadow);
+}
+.project{ padding:22px }
+.project:hover{ transform:translateY(-2px); box-shadow:0 12px 32px rgba(2,6,23,.08) }
+
+/* “View code” button as a pill */
+.links .btn.small{ border-radius:999px }
+
+/* On very wide screens keep content comfy */
+@media (min-width:1200px){
+  .container{ max-width:1100px }
+}
