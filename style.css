@@ -274,3 +274,22 @@ body{
 #about .container p { max-width: 70ch }
 .cta-row .btn { box-shadow: 0 10px 24px rgba(0,114,255,.18) }
 .cta-row .btn:hover { transform: translateY(-1px) }
+
+.hero-photo{
+  width:220px; height:220px; border-radius:50%;
+  object-fit:cover; border:6px solid #fff;
+  box-shadow:0 18px 40px rgba(2,6,23,.12);
+  justify-self:center;
+}
+@media (max-width:900px){ .hero-photo{ margin-bottom:10px } }
+
+.project-thumb{ position:relative; overflow:hidden }
+.project-thumb::after{
+  content:"";
+  position:absolute; inset:0;
+  background:linear-gradient(180deg, transparent 55%, rgba(0,0,0,.25));
+  opacity:0; transition:opacity .25s ease;
+}
+.project h3{ transition: color .2s ease }
+.project:hover .project-thumb::after{ opacity:1 }
+.project:hover h3{ color:#0ea5e9 }
