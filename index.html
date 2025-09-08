@@ -5,22 +5,49 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <title>Soumya Gopalapuram | Portfolio</title>
-  <meta name="description" content="Data Analyst | Machine Learning | Backend Developer" />
+  <meta name="description" content="Data Analyst, Machine Learning, and Backend projects with real outcomes and clean code.">
 
-  <meta property="og:title" content="Soumya Gopalapuram | Portfolio" />
-  <meta property="og:description" content="Data Analyst | Machine Learning | Backend Developer" />
-  <meta property="og:type" content="website" />
-  <meta property="og:image" content="assets/preview.png" />
-  <meta property="og:url" content="https://your-domain.com" />
+  <!-- Canonical -->
+  <link rel="canonical" href="https://tubular-heliotrope-0cb90c.netlify.app/" />
 
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Soumya Gopalapuram | Portfolio">
+  <meta property="og:description" content="Data Analyst | Machine Learning | Backend Developer">
+  <meta property="og:url" content="https://tubular-heliotrope-0cb90c.netlify.app/">
+  <meta property="og:image" content="https://tubular-heliotrope-0cb90c.netlify.app/assets/preview.png">
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Soumya Gopalapuram | Portfolio">
+  <meta name="twitter:description" content="Data Analyst | Machine Learning | Backend Developer">
+  <meta name="twitter:image" content="https://tubular-heliotrope-0cb90c.netlify.app/assets/preview.png">
+
+  <!-- Favicon and font -->
   <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🗂️</text></svg>">
-  <!-- Font -->
-   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
-   <meta name="theme-color" content="#ffffff">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <meta name="theme-color" content="#ffffff">
+
+  <!-- Structured data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Soumya Gopalapuram",
+    "url": "https://tubular-heliotrope-0cb90c.netlify.app/",
+    "sameAs": [
+      "https://github.com/SoumyaGopalapuram",
+      "https://www.linkedin.com/in/soumya-gopalapuram"
+    ],
+    "jobTitle": "Data Analyst",
+    "email": "mailto:soumyagopalapuram11@gmail.com"
+  }
+  </script>
 
   <link rel="stylesheet" href="style.css" />
 </head>
+
 <body>
   <!-- Header -->
   <header class="site-header">
@@ -57,9 +84,10 @@
       <div class="hero-card">
         <p class="hero-card-title">Open to roles in Data, ML, and Backend</p>
         <ul>
-          <li>3+ years across data analysis and backend services</li>
+          <li>3+ years across data analysis, machine learning and backend development</li>
           <li>Python, SQL, Java, REST APIs</li>
-          <li>Power BI, Tableau, Spark, Databricks</li>
+          <li>Apache Spark, Databricks, Snowflake</li>
+          <li>Power BI, Tableau, JMP, Excel</li>
         </ul>
       </div>
     </div>
@@ -108,7 +136,7 @@
         </div>
         <div class="card">
           <h3>Other</h3>
-          <p>Excel, Power Query, Power Automate</p>
+          <p>Excel, Power Query, Power Automate, Predictive Analytics, Business Analytics, Machine Learning, Data Integration, Data Modeling, ETL/ELT workflows, Data Wrangling, Data Warehousing, Information Security, Privacy & Continuity</p>
         </div>
       </div>
     </div>
@@ -116,109 +144,128 @@
 
   <!-- Projects -->
   <section id="projects" class="section">
-    <div class="container">
-      <h2>Projects</h2>
+    <h2>Projects</h2>
 
-      <!-- PROJECT 1 -->
-      <article class="project">
-        <div class="project-content">
-          <h3>AI-Powered Hiring Automation Platform</h3>
-          <p>
-            Built a functional prototype that reduces manual effort in hiring by using LLMs to read JDs,
-            generate search strategies, screen resumes, and coordinate steps across the funnel.
-          </p>
-          <ul class="tags">
-            <li>Nest.js (TypeScript)</li>
-            <li>OpenAI API</li>
-            <li>Supabase PostgreSQL + pgvector</li>
-            <li>VS Code</li>
-            <li>Git & GitHub</li>
-            <li>Thunder Client</li>
-          </ul>
-          <p class="dim">
-            Outcome: First working core feature shipped as a prototype that proves value.
-          </p>
-
-          <div class="links">
-            <a class="btn small" href="https://github.com/SoumyaGopalapuram/hr-automated-backend" target="_blank" rel="noopener">View code</a>
-          </div>
-        </div>
-      </article>
-
-      <!-- PROJECT 2 -->
-      <article class="project">
-        <div class="project-content">
-          <h3>Customer Churn Analysis and Predictive Modeling</h3>
-          <p>
-            Analyzed drivers of churn and trained several models to flag at-risk customers.
-            Focus on balanced precision and recall, with SHAP to explain model behavior.
-          </p>
-          <ul class="tags">
-            <li>Python</li>
-            <li>pandas</li>
-            <li>scikit-learn</li>
-            <li>XGBoost</li>
-            <li>imbalanced-learn</li>
-            <li>SHAP</li>
-            <li>matplotlib</li>
-          </ul>
-          <p class="dim">
-            Outcome: Tuned XGBoost delivered the best tradeoff within a 5-hour constraint using SHAP for interpretability.
-          </p>
-          <div class="links">
-            <a class="btn small" href="https://github.com/SoumyaGopalapuram/CustomerChurnPrediction" target="_blank" rel="noopener">View code</a>
-          </div>
-        </div>
-      </article>
-
-      <!-- PROJECT 3 -->
-      <article class="project">
-        <div class="project-content">
-          <h3>Steam Game Recommendation Engine</h3>
-          <p>
-            Built a scalable recommendation engine to personalize game picks across a large catalog. 
-            Designed ETL in Spark and measured quality with RMSE and Precision@5.
-          </p>
-          <ul class="tags">
-            <li>PySpark</li>
-            <li>Azure Databricks</li>
-            <li>ALS Collaborative Filtering</li>
-            <li>TF-IDF</li>
-          </ul>
-          <p class="dim">
-            Outcome: RMSE 0.85 and Precision@5 72 percent on millions of records.
-          </p>
-          <div class="links">
-            <a class="btn small" href="https://github.com/SoumyaGopalapuram/Steam-Game-recommendation-Engine" target="_blank" rel="noopener">View code</a>
-          </div>
-        </div>
-      </article>
+<div class="projects-grid">
+  <!-- PROJECT 1 -->
+  <article class="project">
+    <div class="project-thumb">
+      <!-- Use an image if you have one -->
+      <!-- <img src="assets/hr-automation.png" alt="AI-Powered Hiring Automation Platform"> -->
+      <div class="placeholder">AI Hiring</div>
     </div>
+    <div class="project-content">
+      <h3>AI-Powered Hiring Automation Platform</h3>
+      <p>
+        Built a functional prototype that reduces manual effort in hiring by using LLMs to read JDs,
+        generate search strategies, screen resumes, and coordinate steps across the funnel.
+      </p>
+      <ul class="tags">
+        <li>Nest.js (TypeScript)</li><li>OpenAI API</li><li>Supabase + pgvector</li>
+        <li>VS Code</li><li>Git & GitHub</li><li>Thunder Client</li>
+      </ul>
+      <p class="dim">Outcome: First working core feature shipped that proves value.</p>
+      <div class="links">
+        <a class="btn small" href="https://github.com/SoumyaGopalapuram/hr-automated-backend" target="_blank" rel="noopener">View code</a>
+      </div>
+    </div>
+  </article>
+
+  <!-- PROJECT 2 -->
+  <article class="project">
+    <div class="project-thumb">
+      <!-- <img src="assets/churn.png" alt="Customer Churn Modeling"> -->
+      <div class="placeholder">Churn</div>
+    </div>
+    <div class="project-content">
+      <h3>Customer Churn Analysis and Predictive Modeling</h3>
+      <p>
+        Analyzed drivers of churn and trained several models to flag at-risk customers.
+        Used SHAP for model explanations under a tight time window.
+      </p>
+      <ul class="tags">
+        <li>Python</li><li>pandas</li><li>scikit-learn</li><li>XGBoost</li>
+        <li>imbalanced-learn</li><li>SHAP</li><li>matplotlib</li>
+      </ul>
+      <p class="dim">Outcome: Tuned XGBoost delivered the best precision and recall balance.</p>
+      <div class="links">
+        <a class="btn small" href="REPLACE_WITH_YOUR_CHURN_REPO_URL" target="_blank" rel="noopener">View code</a>
+      </div>
+    </div>
+  </article>
+
+  <!-- PROJECT 3 -->
+  <article class="project">
+    <div class="project-thumb">
+      <!-- <img src="assets/steam.png" alt="Steam Game Recommendation Engine"> -->
+      <div class="placeholder">Steam Rec</div>
+    </div>
+    <div class="project-content">
+      <h3>Steam Game Recommendation Engine</h3>
+      <p>
+        Built a scalable recommendation engine to personalize picks across a large catalog.
+        Designed ETL in Spark and tracked RMSE and Precision@5.
+      </p>
+      <ul class="tags">
+        <li>PySpark</li><li>Azure Databricks</li><li>ALS Collaborative Filtering</li><li>TF-IDF</li>
+      </ul>
+      <p class="dim">Outcome: RMSE 0.85 and Precision@5 72 percent on millions of records.</p>
+    </div>
+  </article>
+</div>
+
   </section>
 
   <!-- Contact -->
   <section id="contact" class="section alt">
-    <div class="container">
-      <h2>Contact</h2>
+  <div class="container">
+    <h2>Contact</h2>
 
-      <div class="contact-grid">
-        <a class="contact-card" href="mailto:soumyagopalapuram11@gmail.com">
-          <span class="contact-title">Email</span>
-          <span class="contact-value">soumyagopalapuram11@gmail.com</span>
-        </a>
+    <!-- Netlify form -->
+    <form name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field" class="project" style="max-width:720px">
+      <input type="hidden" name="form-name" value="contact" />
+      <p style="display:none">
+        <label>Don’t fill this out: <input name="bot-field" /></label>
+      </p>
 
-        <a class="contact-card" href="https://github.com/SoumyaGopalapuram" target="_blank" rel="noopener">
-          <span class="contact-title">GitHub</span>
-          <span class="contact-value">SoumyaGopalapuram</span>
-        </a>
-
-        <a class="contact-card" href="https://www.linkedin.com/in/soumya-gopalapuram" target="_blank" rel="noopener">
-          <span class="contact-title">LinkedIn</span>
-          <span class="contact-value">soumya-gopalapuram</span>
-        </a>
+      <div class="card" style="padding:16px; margin:0 0 12px">
+        <label for="name"><strong>Name</strong></label>
+        <input id="name" name="name" required style="width:100%; padding:10px; border:1px solid #e5e7eb; border-radius:10px; margin-top:6px">
       </div>
+
+      <div class="card" style="padding:16px; margin:0 0 12px">
+        <label for="email"><strong>Email</strong></label>
+        <input id="email" name="email" type="email" required style="width:100%; padding:10px; border:1px solid #e5e7eb; border-radius:10px; margin-top:6px">
+      </div>
+
+      <div class="card" style="padding:16px; margin:0 0 12px">
+        <label for="message"><strong>Message</strong></label>
+        <textarea id="message" name="message" rows="5" required style="width:100%; padding:10px; border:1px solid #e5e7eb; border-radius:10px; margin-top:6px"></textarea>
+      </div>
+
+      <div>
+        <button class="btn primary" type="submit">Send message</button>
+      </div>
+    </form>
+
+    <!-- Keep your quick links below if you want -->
+    <div class="contact-grid" style="margin-top:16px">
+      <a class="contact-card" href="mailto:soumyagopalapuram11@gmail.com">
+        <span class="contact-title">Email</span>
+        <span class="contact-value">soumyagopalapuram11@gmail.com</span>
+      </a>
+      <a class="contact-card" href="https://github.com/SoumyaGopalapuram" target="_blank" rel="noopener">
+        <span class="contact-title">GitHub</span>
+        <span class="contact-value">SoumyaGopalapuram</span>
+      </a>
+      <a class="contact-card" href="https://www.linkedin.com/in/soumya-gopalapuram" target="_blank" rel="noopener">
+        <span class="contact-title">LinkedIn</span>
+        <span class="contact-value">soumya-gopalapuram</span>
+      </a>
     </div>
-  </section>
+  </div>
+</section>
+
 
   <footer class="site-footer">
     <div class="container footer-inner">
