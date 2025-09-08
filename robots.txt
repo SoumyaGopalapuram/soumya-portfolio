@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://tubular-heliotrope-0cb90c.netlify.app/sitemap.xml

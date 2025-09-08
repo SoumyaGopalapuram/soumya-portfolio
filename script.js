@@ -43,3 +43,32 @@ const spy = new IntersectionObserver((entries) => {
 }, { rootMargin: '-45% 0px -50% 0px', threshold: 0 });
 
 sections.forEach(s => spy.observe(s));
+
+// Compact card interactivity: tilt + click-through
+const prefersReduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+const finePointer = window.matchMedia('(pointer: fine)').matches;
+
+document.querySelectorAll('.project').forEach(card => {
+  // Make the whole card open data-href (but not when clicking real links)
+  const href = card.dataset.href;
+  if (href) {
+    card.setAttribute('tabindex', '0');
+    card.addEventListener('click', e => { if (!e.target.closest('a')) window.open(href, '_blank'); });
+    card.addEventListener('keydown', e => { if (e.key === 'Enter') window.open(href, '_blank'); });
+  }
+
+  // Tilt on mouse move
+  if (!prefersReduce && finePointer) {
+    card.addEventListener('mousemove', e => {
+      const r = card.getBoundingClientRect();
+      const x = (e.clientX - r.left) / r.width;
+      const y = (e.clientY - r.top) / r.height;
+      card.style.setProperty('--rx', ((0.5 - y) * 6).toFixed(2) + 'deg');
+      card.style.setProperty('--ry', ((x - 0.5) * 8).toFixed(2) + 'deg');
+    });
+    card.addEventListener('mouseleave', () => {
+      card.style.setProperty('--rx', '0deg');
+      card.style.setProperty('--ry', '0deg');
+    });
+  }
+});
