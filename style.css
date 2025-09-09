@@ -227,3 +227,690 @@ img{ max-width:100%; display:block }
     box-shadow:var(--shadow);
   }
 }
+
+/* Force side-by-side projects */
+#projects .projects-grid{
+  display: grid !important;
+  grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+  gap: 24px !important;
+}
+
+@media (max-width: 1024px){
+  #projects .projects-grid{
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+  }
+}
+@media (max-width: 640px){
+  #projects .projects-grid{ grid-template-columns: 1fr !important; }
+}
+
+/* Safety: make sure cards don’t force full width */
+#projects .project{
+  width: 100% !important;
+  max-width: none !important;
+}
+
+
+
+/* ==== Projects: reference-style dark section ==== */
+.work-{
+  background:#0b0b10;
+  border-top:1px solid #0f1220;
+  border-bottom:1px solid #0f1220;
+  padding-top:96px;
+  padding-bottom:96px;
+}
+
+.work-head{ color:#e5e7eb; }
+.work-eyebrow{
+  margin:0 0 10px;
+  font-weight:700; letter-spacing:.14em; font-size:13px; color:#cbd5e1;
+}
+.work-title{
+  font-family: Poppins, Inter, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial;
+  margin:0;
+  font-size: clamp(40px, 7vw, 64px);
+  line-height:1;
+  font-weight:800;
+  letter-spacing:-0.02em;
+  color:#f8fafc;
+}
+.work-title .dot{ color:#a78bfa }
+.work-lead{
+  max-width:68ch; color:#94a3b8; margin-top:14px; margin-bottom:36px;
+}
+
+/* grid and spacing */
+.work-grid{
+  display:grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 40px;
+}
+@media (max-width: 1100px){ .work-grid{ grid-template-columns: repeat(2,1fr) } }
+@media (max-width: 700px){  .work-grid{ grid-template-columns: 1fr } }
+
+/* cards */
+.work-card{
+  --card-bg:#141427;
+  --card-border:#1f1f33;
+  --card-hover:#26264a;
+
+  background:var(--card-bg);
+  border:1px solid var(--card-border);
+  border-radius:20px;
+  padding:18px;
+  box-shadow: 0 10px 30px rgba(0,0,0,.25);
+  transition: transform .18s ease, box-shadow .25s ease, border-color .2s ease, background .2s ease;
+  cursor:pointer;
+}
+.work-card:hover{
+  transform: translateY(-4px);
+  border-color:#2b2b4a;
+  background:var(--card-hover);
+  box-shadow: 0 20px 50px rgba(0,0,0,.35);
+}
+
+/* tall mockup frame */
+.mockup{ position:relative; margin-bottom:14px; }
+.mockup .bezel{
+  border-radius:16px;
+  background:#0f1220;
+  border: 6px solid #0f1220;     /* thick bezel */
+  box-shadow: inset 0 0 0 1px rgba(255,255,255,.06), 0 12px 30px rgba(0,0,0,.35);
+  overflow:hidden;
+  aspect-ratio: 16 / 10;         /* tall like the reference */
+}
+.mockup img{ width:100%; height:100%; object-fit:cover; display:block }
+.mockup .open{
+  position:absolute; top:10px; right:10px;
+  width:30px; height:30px; border-radius:999px; border:0;
+  background: radial-gradient(120% 120% at 30% 20%, #fff, #d1d5db);
+  box-shadow: 0 4px 12px rgba(0,0,0,.25);
+  cursor:pointer;
+}
+
+/* text + tags */
+.work-name{ color:#f8fafc; margin:6px 0 4px; font-size:18px; line-height:1.25; font-weight:700 }
+.work-category{ color:#c4b5fd; margin:0 0 6px; font-weight:600; font-size:13px }
+.work-desc{ color:#cbd5e1; margin:0 0 10px; font-size:14px; line-height:1.55; max-width:60ch }
+
+.hashtags{
+  list-style:none; padding:0; margin:0; display:flex; flex-wrap:wrap; gap:8px;
+}
+.hashtags li{
+  font-weight:600; font-size:12px; letter-spacing:.01em;
+  color:#a3e635;
+  background: rgba(163,230,53,.12);
+  border:1px solid rgba(163,230,53,.25);
+  border-radius:999px; padding:6px 10px;
+}
+
+/* ==== Interactive upgrades for legacy project cards ==== */
+
+/* enable perspective from the grid */
+#projects .projects-grid{ perspective: 900px; }
+
+/* tilt variables + lift on hover */
+#projects .project{
+  --rx: 0deg;  /* rotateX */
+  --ry: 0deg;  /* rotateY */
+  --mx: 50%;   /* mouse X for shine */
+  --my: 50%;   /* mouse Y for shine */
+  transform: rotateX(var(--rx)) rotateY(var(--ry)) translateY(0);
+  transition: transform .18s ease, box-shadow .25s ease, border-color .2s ease;
+  will-change: transform;
+  cursor: pointer; /* so it feels interactive */
+}
+#projects .project:hover{
+  transform: rotateX(var(--rx)) rotateY(var(--ry)) translateY(-3px);
+  box-shadow: 0 14px 36px rgba(2,6,23,.10);
+  border-color:#dfe7f5;
+}
+
+/* focus ring stays strong for keyboard users */
+#projects .project:focus-visible{
+  outline:3px solid var(--brand-2);
+  outline-offset:3px;
+}
+
+/* glossy highlight that follows the cursor */
+#projects .project .project-thumb{ position:relative; overflow:hidden }
+#projects .project .project-thumb::before{
+  content:"";
+  position:absolute; inset:-20%;
+  background: radial-gradient(200px 200px at var(--mx) var(--my),
+              rgba(255,255,255,.35), rgba(255,255,255,0) 60%);
+  opacity:0; transition: opacity .2s ease;
+  pointer-events:none;
+}
+#projects .project:hover .project-thumb::before{ opacity:.7 }
+
+/* accessibility: disable motion if requested */
+@media (prefers-reduced-motion: reduce){
+  #projects .project{ transform:none !important }
+  #projects .project:hover{ transform:none !important }
+  #projects .project .project-thumb::before{ display:none }
+}
+
+/* ===== Experience: centered timeline with alternating sides ===== */
+
+/* The list itself becomes a grid with a middle column for the line/dots */
+.exp-timeline{
+  list-style:none;
+  margin:0;
+  padding:0;
+  display:grid;
+  row-gap: 24px;                 /* space between items */
+  position:relative;
+}
+
+/* Vertical center line */
+.exp-timeline::before{
+  content:"";
+  position:absolute;
+  left:50%; top:0; bottom:0;
+  width:2px;
+  background:#e8edf6;
+  transform:translateX(-50%);
+  border-radius:2px;
+}
+
+/* Each item has 3 columns: left | center gap | right */
+.xp-item{
+  display:grid;
+  grid-template-columns: 1fr 32px 1fr;  /* 32px is the center gutter around the line */
+  align-items:start;
+}
+
+/* Dot sits in the middle column */
+.xp-dot{
+  grid-column: 2 / 3;
+  justify-self: center;
+  align-self: start;
+  width:14px; height:14px; border-radius:50%;
+  background:linear-gradient(90deg,var(--brand-1),var(--brand-2));
+  box-shadow:0 0 0 4px #fff;      /* white ring so it sits on the line */
+  border:1px solid #dfe7f5;
+  margin-top: 10px;               /* aligns with card title line */
+}
+
+/* The card reuses your existing style, we just position it */
+.xp-card{
+  background:#fff; border:1px solid #e8edf6; border-radius:16px;
+  box-shadow:var(--shadow);
+  padding:16px;
+  position:relative;
+  transition:transform .12s ease, box-shadow .2s ease;
+}
+.xp-card:hover{ transform:translateY(-2px); box-shadow:0 12px 32px rgba(2,6,23,.08) }
+
+/* Odd items go on the LEFT, even on the RIGHT */
+.exp-timeline .xp-item:nth-child(odd)  .xp-card{ grid-column: 1 / 2; justify-self: end;  max-width: 720px; }
+.exp-timeline .xp-item:nth-child(even) .xp-card{ grid-column: 3 / 4; justify-self: start; max-width: 720px; }
+
+/* Small connector from the center line to the card */
+.xp-card::before{
+  content:"";
+  position:absolute; top:18px; width:24px; height:2px; background:#e8edf6;
+}
+.exp-timeline .xp-item:nth-child(odd)  .xp-card::before{ right:-24px; }  /* points to center */
+.exp-timeline .xp-item:nth-child(even) .xp-card::before{ left:-24px;  }
+
+/* Headers, meta, bullets — keep what you already have */
+.xp-header{ margin-bottom:8px }
+.xp-role{ margin:0 0 4px; font-size:18px }
+.xp-meta{ color:var(--muted); font-weight:600; font-size:14px; display:flex; flex-wrap:wrap; gap:6px 10px }
+.xp-sep{ opacity:.5 }
+.xp-bullets{ margin:8px 0 10px 18px }
+.xp-bullets li{ margin:6px 0; color:var(--text) }
+
+/* Mobile: stack to one column with line on the left */
+@media (max-width: 900px){
+  .exp-timeline{ row-gap:16px }
+  .exp-timeline::before{ left:16px; transform:none } /* line moves left */
+  .xp-item{ grid-template-columns: 32px 1fr }         /* dot | card */
+  .xp-dot{ grid-column:1 / 2; justify-self:center }
+  .xp-card{
+    grid-column: 2 / 3 !important;
+    justify-self: start !important;
+    max-width: none;
+  }
+  .xp-card::before{ display:none } /* connector not needed on mobile */
+}
+
+/* Smaller bullets for selected experience items only */
+.xp-bullets.smaller{
+  font-size: 13px;          /* was ~14–16 */
+  line-height: 1.5;
+  margin: 6px 0 6px 18px;   /* keep your left indent */
+}
+.xp-bullets.smaller li{ margin: 4px 0 }
+
+
+/* a touch larger on small screens for readability */
+@media (max-width: 700px){
+  .xp-bullets.smaller{ font-size: 13.5px }
+}
+
+/* Make ALL Experience bullets smaller */
+#experience .xp-bullets{
+  font-size: 13px !important;   /* smaller text */
+  line-height: 1.5;
+  margin: 6px 0 8px 18px;       /* keep your indent tidy */
+}
+#experience .xp-bullets li{ margin: 4px 0 }
+
+/* Experience bullets: flush-left text with custom dots */
+#experience .xp-bullets{
+  list-style: none;          /* remove default bullets/indent */
+  margin: 6px 0 8px 0 !important;
+  padding: 0 !important;
+  font-size: 13px;           /* keep your smaller size */
+  line-height: 1.5;
+}
+
+#experience .xp-bullets li{
+  position: relative;
+  margin: 4px 0;
+  padding-left: 16px;        /* tiny space for our custom dot */
+}
+
+#experience .xp-bullets li::before{
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0.65em;               /* vertically centers the dot with the line */
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #94a3b8;       /* subtle gray dot; change to var(--brand-2) if you want blue */
+}
+
+/* ==== Fancy Skills cards ==== */
+.skills-grid.fancy{
+  display:grid;
+  grid-template-columns: repeat(3, minmax(0,1fr));
+  gap:16px;
+}
+@media (max-width:1100px){ .skills-grid.fancy{ grid-template-columns: repeat(2,1fr) } }
+@media (max-width:700px){  .skills-grid.fancy{ grid-template-columns: 1fr } }
+
+.skill-card{
+  --accent: var(--brand-2);
+  position:relative;
+  border:1px solid #e8edf6;
+  border-radius:16px;
+  background:#fff;
+  box-shadow: var(--shadow);
+  padding:14px 14px 12px;
+  transition: transform .12s ease, box-shadow .2s ease, border-color .2s ease;
+}
+
+/* top gradient stripe */
+.skill-card::before{
+  content:"";
+  position:absolute; left:0; right:0; top:0; height:4px;
+  border-radius:16px 16px 0 0;
+  background: linear-gradient(90deg, var(--accent), var(--brand-1));
+  opacity:.9;
+}
+
+/* hover */
+.skill-card:hover{
+  transform: translateY(-2px);
+  box-shadow: 0 12px 32px rgba(2,6,23,.08);
+  border-color:#dfe7f5;
+}
+
+/* map data-accent to hues */
+.skill-card[data-accent="blue"]   { --accent:#2563eb }
+.skill-card[data-accent="cyan"]   { --accent:#06b6d4 }
+.skill-card[data-accent="purple"] { --accent:#8b5cf6 }
+.skill-card[data-accent="teal"]   { --accent:#0d9488 }
+.skill-card[data-accent="indigo"] { --accent:#4f46e5 }
+.skill-card[data-accent="green"]  { --accent:#16a34a }
+
+/* header row */
+.skill-head{
+  display:flex; align-items:center; gap:10px; margin-bottom:10px;
+}
+.skill-head h3{ margin:0; font-size:16px }
+.skill-icon{
+  width:34px; height:34px; display:grid; place-items:center;
+  border-radius:10px;
+  background: linear-gradient(135deg, rgba(2,132,199,.12), rgba(37,99,235,.10));
+  border:1px solid #e8edf6;
+  box-shadow: inset 0 0 0 1px rgba(255,255,255,.6);
+  font-size:18px;
+}
+
+/* level badges */
+.level-badge{
+  margin-left:auto; font-weight:700; font-size:12px;
+  padding:4px 8px; border-radius:999px; border:1px solid;
+}
+.level-badge.strong{ color:#065f46; background:#ecfdf5; border-color:#a7f3d0 }
+.level-badge.good  { color:#1e3a8a; background:#eef2ff; border-color:#c7d2fe }
+.level-badge.ok    { color:#075985; background:#e0f2fe; border-color:#bae6fd }
+
+/* tags */
+.skill-tags{
+  list-style:none; padding:0; margin:0;
+  display:flex; flex-wrap:wrap; gap:8px;
+}
+.skill-tags li{
+  font-size:12px; font-weight:600; letter-spacing:.01em;
+  color:#0b1324;
+  background:#f1f5f9;
+  border:1px solid #e5e7eb;
+  border-radius:999px; padding:6px 10px;
+}
+
+/* tiny lift + shine on hover (subtle) */
+.skill-card{ --mx:50%; --my:50% }
+.skill-card:hover{ transform: translateY(-3px) }
+.skill-card::after{
+  content:""; position:absolute; inset:-20%;
+  background: radial-gradient(220px 200px at var(--mx) var(--my), rgba(255,255,255,.25), transparent 60%);
+  opacity:0; transition:opacity .2s ease; pointer-events:none;
+}
+.skill-card:hover::after{ opacity:.7 }
+
+/* move shine with cursor */
+.skill-card{ perspective: 800px }
+.skill-card:hover{ will-change: transform }
+.skill-card:hover .skill-head h3{ color: var(--brand-2) }
+
+@media (hover:hover){
+  .skill-card.add-move{ cursor:pointer }
+  .skill-card.add-move:hover{}
+  .skill-card.add-move:has(.skill-head):hover{}
+}
+
+/* optional: smaller on phones */
+@media (max-width:700px){
+  .skill-icon{ width:30px; height:30px; font-size:16px }
+  .skill-tags li{ padding:5px 8px; font-size:12px }
+}
+
+/* =========== Low poly skill badges =========== */
+.poly-grid{
+  display:grid;
+  grid-template-columns: repeat(6, minmax(0,1fr));
+  gap:34px 44px;
+  justify-items:center;
+}
+@media (max-width:1100px){ .poly-grid{ grid-template-columns: repeat(3,1fr) } }
+@media (max-width:700px){  .poly-grid{ grid-template-columns: repeat(2,1fr) } }
+
+.poly-badge{ display:flex; flex-direction:column; align-items:center; gap:12px; perspective:900px }
+
+.poly{
+  --size: 120px;
+  --rx: 0deg; --ry: 0deg; --mx: 50%; --my: 50%;
+  width: var(--size);
+  aspect-ratio: 1;
+  position: relative;
+  border-radius: 18%;
+  /* 12-sided coin look */
+  clip-path: polygon(50% 0%, 74% 6%, 92% 24%, 98% 50%, 92% 76%, 74% 94%,
+                     50% 100%, 26% 94%, 8% 76%, 2% 50%, 8% 24%, 26% 6%);
+
+  /* facets */
+  background:
+    repeating-conic-gradient(from 0deg,
+      hsl(var(--h,210) 28% 95%) 0 22.5deg,
+      hsl(var(--h,210) 22% 90%) 22.5deg 45deg),
+    radial-gradient(80% 80% at 35% 30%, #fff 0 55%, #ebedf3 70%, #d8dbe5 100%);
+  box-shadow:
+    inset 0 0 0 1px rgba(255,255,255,.7),
+    0 16px 40px rgba(2,6,23,.18);
+  border:1px solid #dfe5f2;
+
+  transform: rotateX(var(--rx)) rotateY(var(--ry));
+  transition: transform .18s ease, box-shadow .25s ease, border-color .2s ease;
+}
+
+/* hue control per badge */
+.poly[data-hue]{ --h: attr(data-hue number); }
+
+/* inner ring highlight */
+.poly::after{
+  content:"";
+  position:absolute; inset:6%;
+  border-radius:16%;
+  box-shadow: inset 0 0 0 2px rgba(255,255,255,.25), inset 0 18px 24px rgba(255,255,255,.25);
+  pointer-events:none;
+}
+
+/* soft moving shine */
+.poly::before{
+  content:"";
+  position:absolute; inset:-20%;
+  background: radial-gradient(220px 200px at var(--mx) var(--my),
+              rgba(255,255,255,.35), rgba(255,255,255,0) 60%);
+  opacity:0; transition: opacity .2s ease;
+  pointer-events:none;
+}
+.poly-badge:hover .poly::before{ opacity:.8 }
+.poly-badge:hover .poly{
+  box-shadow: 0 22px 56px rgba(2,6,23,.24), inset 0 0 0 1px rgba(255,255,255,.7);
+  border-color:#cfd9ee;
+}
+
+/* icon */
+.poly img{
+  position:absolute; inset:0; margin:auto;
+  width:68%; height:68%; object-fit:contain;
+  filter: drop-shadow(0 6px 10px rgba(2,6,23,.25));
+  transform: translateZ(30px);
+}
+
+/* label */
+.poly-label{
+  font-size:18px; font-weight:700; letter-spacing:.01em;
+  color:#0f172a;
+}
+
+/* smaller on phones */
+@media (max-width:700px){
+  .poly{ --size: 96px }
+  .poly-label{ font-size:16px }
+}
+
+/* respects reduced motion */
+@media (prefers-reduced-motion: reduce){
+  .poly{ transition:none }
+  .poly::before{ display:none }
+}
+
+/* ===== Experience company logo header ===== */
+.xp-head{
+  display:flex;
+  align-items:center;
+  gap:12px;
+  margin: -2px 0 10px;        /* pulls header up a hair */
+}
+
+.xp-logo{
+  width:44px;
+  height:44px;
+  border-radius:50%;
+  background:#fff;
+  border:1px solid #e8edf6;
+  box-shadow:0 8px 20px rgba(2,6,23,.12);
+  position:relative;
+  overflow:hidden;
+  flex:0 0 44px;
+}
+.xp-logo::after{
+  content:"";
+  position:absolute;
+  inset:-3px;                 /* brand ring outside the avatar */
+  border-radius:50%;
+  box-shadow:0 0 0 2px var(--brand, #dbeafe);
+  pointer-events:none;
+}
+.xp-logo img{
+  width:100%;
+  height:100%;
+  object-fit:contain;
+  padding:6px;                /* keeps logos from touching the edge */
+}
+
+/* Title text next to the logo */
+.xp-title h3.xp-role{
+  margin:0 0 2px;
+  font-size:18px;
+}
+.xp-title .xp-meta{
+  margin:0;
+  color:var(--muted);
+  font-weight:600;
+  font-size:14px;
+  display:flex;
+  flex-wrap:wrap;
+  gap:6px 10px;
+}
+
+/* Mobile tweaks */
+@media (max-width: 700px){
+  .xp-logo{ width:40px; height:40px; flex-basis:40px }
+  .xp-title h3.xp-role{ font-size:17px }
+  .xp-title .xp-meta{ font-size:13.5px }
+}
+
+/* Toolbox: 5 per row on desktop */
+.poly-grid{
+  display:grid;
+  grid-template-columns: repeat(5, minmax(0,1fr)) !important; /* was 6 */
+  gap:34px 44px;
+  justify-items:center;
+}
+
+/* Responsive steps */
+@media (max-width:1200px){ .poly-grid{ grid-template-columns: repeat(4,1fr) } }
+@media (max-width:900px){  .poly-grid{ grid-template-columns: repeat(3,1fr) } }
+@media (max-width:600px){  .poly-grid{ grid-template-columns: repeat(2,1fr) } }
+
+/* Optional: if it feels tight at 5 across, nudge badge size down a bit */
+@media (min-width:1200px){
+  .poly{ --size: 112px; }  /* try 108–116 to taste */
+}
+
+
+/* Put company logos at the extreme top-right of each experience card */
+.xp-card{ position: relative; overflow: visible; }
+
+.xp-head{
+  display:flex; align-items:flex-start; gap:12px;
+  /* reserve space so the text doesn't run under the logo */
+  padding-right: 64px;            /* adjust to match your logo size */
+  margin: -2px 0 10px;            /* keep your current compact spacing */
+}
+
+/* absolutely position the logo in the card's top-right corner */
+.xp-logo{
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  width: 44px;
+  height: 44px;
+  flex: 0 0 44px;
+  border-radius: 50%;
+  background:#fff;
+  border:1px solid #e8edf6;
+  box-shadow:0 8px 20px rgba(2,6,23,.12);
+  overflow:hidden;
+}
+.xp-logo::after{
+  content:"";
+  position:absolute;
+  inset:-3px;                  /* brand ring */
+  border-radius:50%;
+  box-shadow:0 0 0 2px var(--brand, #dbeafe);
+  pointer-events:none;
+}
+.xp-logo img{
+  width:100%; height:100%;
+  object-fit:contain; padding:6px;
+}
+
+/* Mobile: slightly smaller and tighter padding */
+@media (max-width: 700px){
+  .xp-head{ padding-right: 56px; }
+  .xp-logo{
+    top:10px; right:10px;
+    width:40px; height:40px; flex-basis:40px;
+  }
+}
+
+/* === Experience logos: square + larger, fixed top-right === */
+.xp-card{ position: relative; overflow: visible; }
+
+/* give the header room so text doesn't run under the bigger logo */
+.xp-head{
+  padding-right: 88px;                /* fits a 56px logo + breathing room */
+}
+
+/* square logo pinned to the top-right */
+.xp-logo{
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  width: 56px;                         /* larger size */
+  height: 56px;
+  border-radius: 12px;                 /* square with soft corners */
+  background:#fff;
+  border:1px solid #e8edf6;
+  box-shadow: 0 10px 24px rgba(2,6,23,.12);
+  overflow:hidden;
+}
+
+/* brand-colored ring for squares */
+.xp-logo::after{
+  content:"";
+  position:absolute;
+  inset:-3px;
+  border-radius: 12px;                 /* match the square corners */
+  box-shadow: 0 0 0 2px var(--brand, #dbeafe);
+  pointer-events:none;
+}
+
+.xp-logo img{
+  width:100%;
+  height:100%;
+  object-fit: contain;
+  padding: 8px;                        /* a bit more padding for square frame */
+}
+
+/* Mobile: slightly smaller, adjust header padding */
+@media (max-width: 700px){
+  .xp-head{ padding-right: 72px; }
+  .xp-logo{
+    top: 10px; right: 10px;
+    width: 48px; height: 48px;
+    border-radius: 10px;
+  }
+  .xp-logo::after{ border-radius: 10px; }
+}
+
+/* Experience logos: keep size, make them round again */
+.xp-head{ padding-right: 88px; } /* keep room for the 56px logo */
+
+.xp-logo{
+  width: 56px;
+  height: 56px;
+  border-radius: 50% !important;   /* round */
+  top: 12px;
+  right: 12px;
+}
+
+.xp-logo::after{
+  border-radius: 50% !important;   /* round brand ring */
+}
+
+.xp-logo img{
+  padding: 8px;                    /* adjust if your art feels cramped */
+}
+

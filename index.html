@@ -1,12 +1,15 @@
 <!doctype html>
 <html lang="en">
 <head>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;700;800&display=swap" rel="stylesheet">
+
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <title>Soumya Gopalapuram | Portfolio</title>
   <meta name="description" content="Data Analyst, Machine Learning, and Backend projects with real outcomes and clean code.">
-
+  
+  <link rel="stylesheet" href="style.css?v=7">
   <!-- Canonical -->
   <link rel="canonical" href="https://tubular-heliotrope-0cb90c.netlify.app/" />
 
@@ -123,6 +126,89 @@
   </section>
 
   <!-- Skills -->
+<section id="skills" class="section">
+  <div class="container">
+    <h2>Skills</h2>
+
+    <div class="skills-grid fancy">
+      <!-- Languages -->
+      <article class="skill-card" data-accent="blue">
+        <header class="skill-head">
+          <span class="skill-icon">🐍</span>
+          <h3>Languages</h3>
+          <span class="level-badge strong">Core</span>
+        </header>
+        <ul class="skill-tags">
+          <li>Python</li><li>SQL</li><li>Java</li>
+        </ul>
+      </article>
+
+      <!-- Data & ML -->
+      <article class="skill-card" data-accent="cyan">
+        <header class="skill-head">
+          <span class="skill-icon">🧠</span>
+          <h3>Data & ML</h3>
+          <span class="level-badge strong">Core</span>
+        </header>
+        <ul class="skill-tags">
+          <li>pandas</li><li>scikit-learn</li><li>XGBoost</li><li>SHAP</li>
+          <li>Spark</li><li>Databricks</li>
+        </ul>
+      </article>
+
+      <!-- Visualization -->
+      <article class="skill-card" data-accent="purple">
+        <header class="skill-head">
+          <span class="skill-icon">📊</span>
+          <h3>Visualization</h3>
+          <span class="level-badge good">Strong</span>
+        </header>
+        <ul class="skill-tags">
+          <li>Power BI</li><li>Tableau</li><li>Matplotlib</li>
+        </ul>
+      </article>
+
+      <!-- Databases -->
+      <article class="skill-card" data-accent="teal">
+        <header class="skill-head">
+          <span class="skill-icon">🗄️</span>
+          <h3>Databases</h3>
+          <span class="level-badge good">Strong</span>
+        </header>
+        <ul class="skill-tags">
+          <li>PostgreSQL</li><li>MySQL</li><li>SQL Server</li><li>Supabase</li>
+        </ul>
+      </article>
+
+      <!-- Backend -->
+      <article class="skill-card" data-accent="indigo">
+        <header class="skill-head">
+          <span class="skill-icon">🔌</span>
+          <h3>Backend</h3>
+          <span class="level-badge ok">Working</span>
+        </header>
+        <ul class="skill-tags">
+          <li>Nest.js</li><li>REST APIs</li><li>CI/CD</li><li>Postman</li>
+        </ul>
+      </article>
+
+      <!-- Other -->
+      <article class="skill-card" data-accent="green">
+        <header class="skill-head">
+          <span class="skill-icon">🧰</span>
+          <h3>Other</h3>
+          <span class="level-badge ok">Working</span>
+        </header>
+        <ul class="skill-tags">
+          <li>Excel</li><li>Power Query</li><li>Business Analytics</li>
+          <li>InfoSec Awareness</li>
+        </ul>
+      </article>
+    </div>
+  </div>
+</section>
+
+  <!-- Skills -->
   <section id="skills" class="section alt">
     <div class="container">
       <h2>Skills</h2>
@@ -164,22 +250,21 @@
 <ol class="exp-timeline">
   <!-- Zably.AI -->
   <li class="xp-item reveal">
-    <div class="xp-dot" aria-hidden="true"></div>
-    <div class="xp-card">
-      <header class="xp-header">
+     <div class="xp-dot" aria-hidden="true"></div>
+  <div class="xp-card" style="--brand:#0ea5e9">
+    <div class="xp-head">
+      <div class="xp-logo"><img src="assets/logos/zably.jpg" alt="Zably.AI logo" loading="lazy"></div>
+      <div class="xp-title">
         <h3 class="xp-role">Data Analyst</h3>
-        <div class="xp-meta">
-          <span class="xp-company">Zably.AI</span>
-          <span class="xp-sep">•</span>
-          <span class="xp-dates">Aug 2025 – Present</span>
-          <span class="xp-sep">•</span>
-          <span class="xp-location">USA</span>
-        </div>
+        <p class="xp-meta">
+          <span class="xp-company">Zably.AI</span> • <span class="xp-dates">Aug 2025 – Present</span> • <span class="xp-loc">USA</span>
+        </p>
+      </div>
+    </div>
       </header>
       <ul class="xp-bullets">
-        <li>Built weekly executive dashboards that cut manual analysis time by ~30 percent.</li>
-        <li>Designed Python and SQL ETL jobs that clean and join multi-source data into a modeling table.</li>
-        <li>Owned churn and recommendation experiments and reported results with A/B readouts.</li>
+        <li>Built weekly executive dashboards that cut manual analysis time by ~30%</li>
+        <li>Designed Python and SQL ETL jobs that clean and join multi-source data into a modeling table</li>
       </ul>
       <ul class="tags">
         <li>Python</li><li>SQL</li><li>Power BI</li><li>Databricks</li>
@@ -190,8 +275,10 @@
   <!-- Infosys -->
   <li class="xp-item reveal">
     <div class="xp-dot" aria-hidden="true"></div>
-    <div class="xp-card">
+    <div class="xp-card" style="--brand:#007cc3">
       <header class="xp-header">
+              <div class="xp-logo"><img src="assets/logos/infosys_logo.png" alt="Infosys logo" loading="lazy"></div>
+
         <h3 class="xp-role">Systems Engineer</h3>
         <div class="xp-meta">
           <span class="xp-company">Infosys</span>
@@ -201,13 +288,14 @@
           <span class="xp-location">Hyderabad, India</span>
         </div>
       </header>
-      <ul class="xp-bullets">
-        <li>Developed 20+ RESTful APIs using Java and Spring Boot to modernize a legacy monolithic system to scalable microservices architecture, reducing response time by around 70% supporting client integration needs.</li>
-        <li>Enhanced database performance by optimizing vector database queries and SQL procedures in PostgreSQL, resulting in a 50% improvement in data retrieval speed and dashboard load times.</li>
-        <li>Conducted functional and regression testing using Postman, leading to a ~30% reduction in production-level issues across multiple sprint cycles and ensuring reliable deliverables.</li>
-        <li>Balanced development and production support across 10+ Agile sprints, consistently delivering features on schedule, addressing ~15+ weekly ad-hoc change requests, and conducting peer code reviews to uphold code quality.</li>
-        <li>Maintained Git-based version control and implemented CI/CD best practices to streamline deployment cycles, decreasing rollbacks and build failures while reinforcing systems implementation excellence.</li>
-      </ul>
+     <ul class="xp-bullets">
+  <li>Built 20+ Java Spring Boot REST APIs, moving a monolith to microservices, cutting response time by 70%</li>
+  <li>Tuned Postgres vector queries and SQL procedures, improving data reads and dashboard loads by 50%</li>
+  <li>Ran functional and regression testing with Postman, reducing production issues about 30%</li>
+  <li>Delivered on schedule across 10+ sprints while handling about 15 ad-hoc requests weekly and leading code reviews</li>
+  <li>Standardized Git flow and CI/CD, streamlining releases and reducing rollbacks and failed builds</li>
+</ul>
+
       <ul class="tags">
         <li>Java</li><li>Spring Boot</li><li>REST APIs</li><li>PostgreSQL</li><li>CI/CD</li>
       </ul>
@@ -217,8 +305,10 @@
   <!-- Amazon -->
   <li class="xp-item reveal">
     <div class="xp-dot" aria-hidden="true"></div>
-    <div class="xp-card">
+    <div class="xp-card" style="--brand:#f59e0b">
       <header class="xp-header">
+              <div class="xp-logo"><img src="assets/logos/Amazon_logo.png" alt="Infosys logo" loading="lazy"></div>
+
         <h3 class="xp-role">Machine Learning Data Associate</h3>
         <div class="xp-meta">
           <span class="xp-company">Amazon</span>
@@ -228,13 +318,14 @@
           <span class="xp-location">Hyderabad, India</span>
         </div>
       </header>
-      <ul class="xp-bullets">
-        <li>Analyzed operational data from 50+ autonomous robots to assist in real-time issue resolution and root-cause reporting, contributing to a 15% reduction in system downtime across multiple fulfillment and bolstered business analytics for client operations.</li>
-        <li>Validated machine learning software updates through structured A/B testing and regression scenarios, identifying and documenting edge cases to improve model robustness in live environments.</li>
-        <li>Partnered with data scientists and engineers to annotate datasets, review model outputs, and perform quality checks, accelerating the refinement of computer vision and navigation models to enhance service delivery.</li>
-        <li>Served as interim Subject Matter Expert (SME), enforcing SOPs that improved task consistency across a 25-member team and reduced process errors by 40%. </li>
-        <li>Built performance-tracking dashboards in Excel to support weekly reporting, enabling data-driven operations management and continuous team performance monitoring.</li>
-      </ul>
+      <ul class="xp-bullets smaller">
+  <li>Analyzed 50+ autonomous robots to resolve incidents in real time and drive root-cause reporting, reducing downtime 15%</li>
+  <li>Validated ML releases with structured A/B and regression tests, capturing edge cases and improving model robustness</li>
+  <li>Partnered with data scientists & engineers to annotate data and QC model outputs, speeding computer vision and navigation model iteration</li>
+  <li>Served as interim SME, enforced SOPs across a 25-member team, and cut process errors 40%</li>
+  <li>Built Excel performance dashboards for weekly reporting, enabling data-driven operations and continuous monitoring</li>
+</ul>
+
       <ul class="tags">
         <li>Machine Learning</li><li>Excel</li><li>Dashboards</li><li>Business Analytics</li><li>Data Quality</li><li>Testing</li>
       </ul>
@@ -245,14 +336,13 @@
   </div>
 </section>
 
-
   <!-- Projects -->
   <section id="projects" class="section projects-section">
     <h2>Projects</h2>
 
 <div class="projects-grid">
   <!-- PROJECT 1 -->
-  <article class="project">
+  <article class="project" data-href="https://github.com/SoumyaGopalapuram/hr-automated-backend">
     <div class="project-thumb">
       <!-- Use an image if you have one -->
       <img src="assets/hiring" alt="AI-Powered Hiring Automation Platform">
@@ -276,7 +366,7 @@
   </article>
 
   <!-- PROJECT 2 -->
-  <article class="project">
+  <article class="project" data-href="https://github.com/SoumyaGopalapuram/CustomerChurnPrediction">
     <div class="project-thumb">
       <img src="assets/churn.png" alt="Customer Churn Modeling" loading="lazy" width="960" height="540">
       <div class="placeholder">Predictive Modeling</div>
@@ -299,7 +389,7 @@
   </article>
 
   <!-- PROJECT 3 -->
-  <article class="project">
+  <article class="project" data-href="https://github.com/SoumyaGopalapuram/Steam-Game-recommendation-Engine">
     <div class="project-thumb">
       <img src="assets/steam.jpg" alt="Steam Game Recommendation Engine">
       <div class="placeholder">Steam Game Recommendation</div>
@@ -322,6 +412,86 @@
 </div>
 
   </section>
+
+  <!-- Toolbox - low poly badges -->
+<section id="toolbox" class="section">
+  <div class="container">
+    <h2>Toolbox</h2>
+
+    <ul class="poly-grid">
+      <li class="poly-badge">
+        <div class="poly" data-hue="210">
+          <img src="assets/icons/python_icon.jpg" alt="Python">
+        </div>
+        <span class="poly-label">Python</span>
+      </li>
+
+      <li class="poly-badge">
+        <div class="poly" data-hue="28">
+          <img src="assets/icons/pandas_icon.png" alt="Pandas">
+        </div>
+        <span class="poly-label">Pandas</span>
+      </li>
+
+      <li class="poly-badge">
+        <div class="poly" data-hue="180">
+          <img src="assets/icons/sql_icon.png" alt="SQL">
+        </div>
+        <span class="poly-label">SQL</span>
+      </li>
+
+      <li class="poly-badge">
+        <div class="poly" data-hue="38">
+          <img src="assets/icons/postgresql_icon.png" alt="PostreSQL">
+        </div>
+        <span class="poly-label">PostreSQL</span>
+      </li>
+
+      <li class="poly-badge">
+        <div class="poly" data-hue="195">
+          <img src="assets/icons/supabase_icon.png" alt="Supabase">
+        </div>
+        <span class="poly-label">Supabase</span>
+      </li>
+
+      <li class="poly-badge">
+        <div class="poly" data-hue="205">
+          <img src="assets/icons/Snowflake_icon.png" alt="Snowflake">
+        </div>
+        <span class="poly-label">Snowflake</span>
+      </li>
+
+      <li class="poly-badge">
+        <div class="poly" data-hue="195">
+          <img src="assets/icons/powerbi_icon.jpg" alt="Power BI">
+        </div>
+        <span class="poly-label">Power BI</span>
+      </li>
+
+      <li class="poly-badge">
+        <div class="poly" data-hue="195">
+          <img src="assets/icons/Tableau_icon.png" alt="Tableau">
+        </div>
+        <span class="poly-label">Tableau</span>
+      </li>
+
+      <li class="poly-badge">
+        <div class="poly" data-hue="195">
+          <img src="assets/icons/api_icon.jpg" alt="REST API">
+        </div>
+        <span class="poly-label">REST API</span>
+      </li>
+
+      <li class="poly-badge">
+        <div class="poly" data-hue="195">
+          <img src="assets/icons/postman_icon.png" alt="Postman">
+        </div>
+        <span class="poly-label">Postman</span>
+      </li>
+
+    </ul>
+  </div>
+</section>
 
   <!-- Contact -->
   <section id="contact" class="section alt">
@@ -372,6 +542,7 @@
     </div>
   </div>
 </section>
+
 
 
   <footer class="site-footer">
